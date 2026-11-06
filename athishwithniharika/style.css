@@ -8,7 +8,7 @@ body {
   background: radial-gradient(ellipse at top, #fff8e8, #e9d7b6);
 }
 
-.page { display: flex; justify-content: center; }
+.page { display: flex; flex-direction: column; align-items: center; gap: clamp(1.25rem, 4vw, 2.5rem); }
 .invitation {
   position: relative;
   width: min(100%, 760px);
@@ -29,3 +29,21 @@ body {
 .hotspot:focus-visible { outline: 3px solid #6d1025; outline-offset: 2px; }
 
 @media (max-width: 480px) { body { padding: .25rem; } }
+
+.countdown {
+  width: min(100%, 760px);
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 1px solid #d0ae61;
+  color: #5b1022;
+  background: linear-gradient(145deg, #fff8e8, #f3e3bf);
+  box-shadow: 0 8px 26px rgb(53 30 10 / 15%);
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+.countdown-kicker { margin: 0 0 .55rem; color: #315b46; font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.countdown h1 { margin: 0 0 1.2rem; color: #79152e; font-size: clamp(1.15rem, 4vw, 1.75rem); font-style: normal; }
+.countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.45rem, 2vw, 1rem); }
+.countdown-unit { display: grid; gap: .35rem; padding: clamp(.7rem, 2.2vw, 1rem) .35rem; border: 1px solid #c69b4d; border-radius: 8px; background: rgb(255 255 255 / 42%); }
+.countdown-unit span { color: #78142d; font-size: clamp(1.5rem, 7vw, 2.6rem); font-variant-numeric: tabular-nums; font-weight: 700; line-height: 1; }
+.countdown-unit small { color: #315b46; font-size: clamp(.62rem, 2vw, .8rem); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.countdown-message { margin: 0; color: #315b46; font-size: clamp(1.2rem, 4vw, 1.6rem); font-style: italic; }
